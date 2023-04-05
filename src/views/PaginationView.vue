@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import Pagination from '../components/Pagination.vue'
 import { reactive, computed,ref } from 'vue'
+import axios from 'axios';
+import type { AxiosResponse } from 'axios';
+
 let pagination = reactive({
   currentPage: 1,
   itemsPerPage: 5,
@@ -48,11 +51,52 @@ const goToPage = (page:number)=>{
   pagination.currentPage = page;
 }
 
+
+////API
+const apiUrl = "https://jsonplaceholder.typicode.com/users";
+const userOnlineList = ref([])
+const onlineUserPagination = reactive({
+  currentPage: 1,
+  itemsPerPage: 5,
+  totalUsers: 0,
+})
+
+
+const fetchData = async () => {
+  // const response: AxiosResponse = await axios.get(url);
+  console.log('onlineUserPagination',onlineUserPagination)
+  const response = await axios.get(
+    `https://hacker-news.firebaseio.com/v0/`
+  )
+  console.log('res',response.data)
+  userOnlineList.value = response.data;
+  onlineUserPagination.totalUsers = response.data.length;
+}
+
+const previousPageUser = (newPage: number) => {
+  onlineUserPagination.currentPage = newPage;
+  fetchData()
+}
+const nextPageUser  = (newPage: number) => {
+  console.log('nextOuter', newPage)
+  onlineUserPagination.currentPage = newPage;
+  fetchData()
+}
+// const paginationEl = ref<HTMLInputElement | null>(null)
+const goToPageUser = (page: number) => {
+  console.log('ee', page)
+  // pagination.goToPage(pageNumber);
+  pagination.currentPage = page;
+  fetchData()
+}
+
+fetchData()
+
 </script>
 
 <template>
   <div>
-    <ul>
+    <!-- <ul>
       <li v-for="user in pagedUsers" :key="user.id">{{ user.name }}:{{user.id}}</li>
     </ul>
     <Pagination
@@ -64,9 +108,22 @@ const goToPage = (page:number)=>{
         @next-page="nextPageHandler"
         @go-to-page="goToPage"
 
-    ></Pagination>
+    ></Pagination> -->
     <div class="fetch-data">
-      
+      <ul>
+        <li v-for="(user, index) in userOnlineList" :key="index">
+          {{ user.name }} - {{ user.id }} - {{ user.email }}
+        </li>
+      </ul>
+        <Pagination
+          ref="paginationUser"
+          :current-page="onlineUserPagination.currentPage"
+          :items-per-page="onlineUserPagination.itemsPerPage"
+          :total-items="onlineUserPagination.totalUsers"
+          @previous-page="previousPageUser"
+          @next-page="nextPageUser"
+          @go-to-page="goToPageUser"
+      ></Pagination>
     </div>
   </div>
 </template>
