@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import MyButton from '../components/Button.vue'
-import {  defineEmits, computed  } from 'vue'
+import {  computed  } from 'vue'
 
 export interface Props {
   currentPage:number,

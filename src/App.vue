@@ -5,7 +5,7 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="120" height="120" />
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
@@ -15,6 +15,7 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/about">Button</RouterLink>
         <RouterLink to="/paginationView">Pagination</RouterLink>
         <RouterLink to="/switchBtnView">Switch Button</RouterLink>
+        <RouterLink to="/searchBarView">searchBarView</RouterLink>
       </nav>
     </div>
   </header>

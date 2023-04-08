@@ -10,23 +10,23 @@ import SwitchButton from '../components/SwitchButton.vue'
     <h2>Switch Button</h2>
     <SwitchButton :disabled="false"  :switchWidth="true" class="mb-5" color="blue">
       <template #left-label>
-        <span class="mr-3 text-sm font-medium text-gray-900 dark:text-gray-300">Toggle me</span>
+        <span class="mr-3 text-sm font-medium text-gray-900 dark:text-gray-300">Toggle me~</span>
       </template>
     </SwitchButton>
     <SwitchButton :disabled="false"  :switchWidth="true" class="mb-5" color="green">
         <template #left-label>
-          <span class="mr-3 text-sm font-medium text-gray-900 dark:text-gray-300">Toggle me</span>
+          <span class="mr-3 text-sm font-medium text-gray-900 dark:text-gray-300">Toggle me!</span>
         </template>
       </SwitchButton>
     <SwitchButton :disabled="true" :switchWidth="true" >
         <template #right-label>
-          <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300" >Toggle me</span>
+          <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300" >Toggle it it label right</span>
         </template>
       
       </SwitchButton>
-        <SwitchButton :disabled="false" :switchWidth="false">
+        <SwitchButton :disabled="false" :switchWidth="false" color="red">
           <template #middle-label>
-            <span class="ml-3 text-sm  font-medium text-gray-900 dark:text-gray-300" >Toggle me</span>
+            <span class=" ml-[25px] mr-[25px] text-sm  font-medium text-gray-900 dark:text-gray-300" >Toggle me and checked it!!</span>
           </template>
         </SwitchButton>
   </div>

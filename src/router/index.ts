@@ -23,12 +23,17 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/paginationView.vue')
+      component: () => import('../views/PaginationView.vue')
     },
     {
       path: '/switchBtnView',
       name: 'switchBtnView',
-      component: () => import('../views/switchBtnView.vue')
+      component: () => import('../views/SwitchBtnView.vue')
+    },
+    {
+      path: '/searchBarView',
+      name: 'searchBarView',
+      component: () => import('../views/SearchBarView.vue')
     }
   ]
 })

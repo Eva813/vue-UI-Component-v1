@@ -90,13 +90,14 @@ const goToPageUser = (page: number) => {
   fetchData()
 }
 
-fetchData()
+// fetchData()
 
 </script>
 
 <template>
   <div>
-    <!-- <ul>
+    <div>Pagination</div>
+    <ul>
       <li v-for="user in pagedUsers" :key="user.id">{{ user.name }}:{{user.id}}</li>
     </ul>
     <Pagination
@@ -108,8 +109,8 @@ fetchData()
         @next-page="nextPageHandler"
         @go-to-page="goToPage"
 
-    ></Pagination> -->
-    <div class="fetch-data">
+    ></Pagination>
+    <!-- <div class="fetch-data">
       <ul>
         <li v-for="(user, index) in userOnlineList" :key="index">
           {{ user.name }} - {{ user.id }} - {{ user.email }}
@@ -124,7 +125,7 @@ fetchData()
           @next-page="nextPageUser"
           @go-to-page="goToPageUser"
       ></Pagination>
-    </div>
+    </div> -->
   </div>
 </template>
 
