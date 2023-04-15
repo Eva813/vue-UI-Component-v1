@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Pagination from '../components/Pagination.vue'
+import PaginationVisibleBtn from '../components/PaginationVisibleBtn.vue'
 import { reactive, computed,ref } from 'vue'
 import axios from 'axios';
 import type { AxiosResponse } from 'axios';
@@ -92,6 +93,29 @@ const goToPageUser = (page: number) => {
 
 // fetchData()
 
+
+
+//////
+
+const visibleData = reactive([
+  { name: 'Eva', id: 1, location: 'Taipei' },
+  { name: 'wva', id: 2, location: 'Taipei' },
+  { name: 'dva', id: 3, location: 'Taipei' },
+  { name: 'tva', id: 4, location: 'Taipei' },
+  { name: 'uva', id: 5, location: 'Taipei' },
+  { name: 'iva', id: 6, location: 'Taipei' },
+  { name: 'jva', id: 7, location: 'Taipei' },
+  { name: 'Eva', id: 8, location: 'Taipei' },
+  { name: 'hva', id: 9, location: 'Taipei' },
+  { name: 'gva', id: 10, location: 'Taipei' },
+  { name: 'Effva', id: 11, location: 'Taipei' },
+  { name: 'Efva', id: 12, location: 'Taipei' },
+  { name: 'Efvea', id: 13, location: 'Oaipei' },
+  { name: 'Efeva', id: 14, location: 'Maipei' },
+  { name: 'Efva', id: 15, location: 'Taipei' },
+  { name: 'Effva', id: 16, location: 'Taipei' },
+]);
+
 </script>
 
 <template>
@@ -126,6 +150,14 @@ const goToPageUser = (page: number) => {
           @go-to-page="goToPageUser"
       ></Pagination>
     </div> -->
+    <div>
+      <h3>隨設定程度變化可見的按鈕數</h3>
+      <PaginationVisibleBtn
+        :total-items="visibleData.length"
+        :items-per-page="2"
+        :length="4"
+      ></PaginationVisibleBtn>
+    </div>
   </div>
 </template>
 
