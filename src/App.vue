@@ -5,17 +5,17 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="120" height="120" />
-
+    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="50" height="50" />
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
-
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">Button</RouterLink>
         <RouterLink to="/paginationView">Pagination</RouterLink>
         <RouterLink to="/switchBtnView">Switch Button</RouterLink>
         <RouterLink to="/searchBarView">searchBarView</RouterLink>
+        <RouterLink to="/selectView">select</RouterLink>
+        <RouterLink to="/chipsView">chips</RouterLink>
       </nav>
     </div>
   </header>
