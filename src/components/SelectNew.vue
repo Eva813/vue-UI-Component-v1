@@ -2,6 +2,7 @@
 import { ref, computed, onMounted } from 'vue'
 import type { PropType } from 'vue'
 
+//合併用法？公司
 export interface Option {
   value: string;
   label: string;
@@ -74,6 +75,7 @@ const clearSelection = ()=>{
     emit('update:selected-values', null);
   }
 }
+///製作 chip\彈跳視窗
 
 
 </script>
@@ -97,7 +99,7 @@ const clearSelection = ()=>{
           {{ option.label }}
         </label>
       </li>
-      <li v-else class="select-option" v-for="option in options" :key="option.value" @click="selectOption(option)">
+      <li v-else class="select-option" v-for="option in options" :key="option.label" @click="selectOption(option)">
         {{ option.label }}
       </li>
     </ul>

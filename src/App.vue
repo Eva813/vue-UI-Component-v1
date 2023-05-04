@@ -16,6 +16,9 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/searchBarView">searchBarView</RouterLink>
         <RouterLink to="/selectView">select</RouterLink>
         <RouterLink to="/chipsView">chips</RouterLink>
+        <RouterLink to="/dialogView">Dialog</RouterLink>
+        <RouterLink to="/checkboxView">Checkbox</RouterLink>
+        <RouterLink to="/expansionView">ExpansionView</RouterLink>
       </nav>
     </div>
   </header>

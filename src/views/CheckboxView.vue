@@ -44,7 +44,7 @@ const people = ref([
       <Checkbox :disabled="false" v-model:model-value="isSelectedAgree">
         <template v-slot:labelContext>
           <div>
-            I agree that <a>agreement doc</a>
+            I agree that <a href="https://tailwindcss.com/docs/hover-focus-and-other-states#indeterminate">agreement doc</a>
           </div>
         </template>
       </Checkbox>

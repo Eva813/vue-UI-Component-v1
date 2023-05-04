@@ -15,7 +15,7 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
+      component: () => import('../views/ButtonView.vue')
     },
     {
       path: '/paginationView',
@@ -34,6 +34,31 @@ const router = createRouter({
       path: '/searchBarView',
       name: 'searchBarView',
       component: () => import('../views/SearchBarView.vue')
+    },
+    {
+      path: '/selectView',
+      name: 'selectView',
+      component: () => import('../views/SelectView.vue')
+    },
+    {
+      path: '/chipsView',
+      name: 'chipsView',
+      component: () => import('../views/ChipsView.vue')
+    },
+    {
+      path: '/dialogView',
+      name: 'dialogView',
+      component: () => import('../views/DialogView.vue')
+    },
+    {
+      path: '/checkboxView',
+      name: 'checkboxView',
+      component: () => import('../views/CheckboxView.vue')
+    },
+    {
+      path: '/expansionView',
+      name: 'expansionView',
+      component: () => import('../views/ExpansionView.vue')
     }
   ]
 })
