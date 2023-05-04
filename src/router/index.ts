@@ -59,6 +59,11 @@ const router = createRouter({
       path: '/expansionView',
       name: 'expansionView',
       component: () => import('../views/ExpansionView.vue')
+    },
+    {
+      path: '/formsView',
+      name: 'formsView',
+      component: () => import('../views/FormsView.vue')
     }
   ]
 })
