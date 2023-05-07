@@ -5,6 +5,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components{
+  .form-control{
+    @apply border h-auto pt-[3rem] rounded
+  }
+}
+
 #app {
   max-width: 1280px;
   margin: 0 auto;
@@ -38,3 +44,4 @@ a,
     padding: 0 2rem;
   }
 }
+
