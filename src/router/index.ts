@@ -64,6 +64,11 @@ const router = createRouter({
       path: '/formsView',
       name: 'formsView',
       component: () => import('../views/FormsView.vue')
+    },
+    {
+      path: '/sliderView',
+      name: 'sliderView',
+      component: () => import('../views/SliderView.vue')
     }
   ]
 })

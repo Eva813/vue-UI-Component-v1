@@ -20,6 +20,7 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/checkboxView">Checkbox</RouterLink>
         <RouterLink to="/expansionView">ExpansionView</RouterLink>
         <RouterLink to="/formsView">formsView</RouterLink>
+        <RouterLink to="/sliderView">sliderView</RouterLink>
       </nav>
     </div>
   </header>
