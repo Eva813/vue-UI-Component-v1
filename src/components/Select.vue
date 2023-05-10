@@ -7,7 +7,9 @@ export interface Props {
   multiple?:boolean,
   selectedValues?: string | string[],
   placeholder?:string;
-  outline: boolean
+  outline: boolean;
+   //inputStyle 針對輸入框加入樣式
+  inputStyle?: string
 }
 
 const props= withDefaults(defineProps<Props>(), {
@@ -61,7 +63,7 @@ const selectOption =(option: { label: string, value: string })=>{
 <template>
   <!-- <div class="select-container mt-2"> -->
     <div class="relative"  @click="toggleDropdown">
-      <input type="text" class="block min-h-[auto] w-full  rounded-sm cursor-pointer py-[0.32rem] px-3" :class="[{'outline': outline}]" :value="Array.isArray(props.selectedValues) ? props.selectedValues?.join(', ') : props.selectedValues" :placeholder="placeholder">
+      <input type="text" class="block min-h-[auto] w-full  rounded-sm cursor-pointer py-[0.32rem] px-3 " :class="[{'outline': outline}, inputStyle]" :value="Array.isArray(props.selectedValues) ? props.selectedValues?.join(', ') : props.selectedValues" :placeholder="placeholder">
       <span class="absolute right-2 text-[0.8rem] cursor-pointer peer-focus:text-blue-600  top-2">▼</span>
     </div>
     <div v-if="dropdownOpen" class="dropdown-menu mt-3  border-slate-300 shadow-lg shadow-slate-300/50">

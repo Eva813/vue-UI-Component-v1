@@ -28,10 +28,9 @@ const optionsOne = ref([
   <FormElementWrap
         :has-error="false"
         :msg="'this is error message'"
-        :input-style="'form-control'"
       >
       <!-- 共用的input樣式是否要抽共用 -->
-    <Select class="w-full height-[100px]"   :outline="false" v-model:selected-values="selectedValue1" :options="optionsOne" ></Select>
+    <Select class="w-full height-[100px]"  :input-style="'border h-auto pt-[3rem] rounded'"  :outline="false" v-model:selected-values="selectedValue1" :options="optionsOne" ></Select>
     </FormElementWrap>
   </div>
 </template>
