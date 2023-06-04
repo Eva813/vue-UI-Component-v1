@@ -69,6 +69,16 @@ const router = createRouter({
       path: '/sliderView',
       name: 'sliderView',
       component: () => import('../views/SliderView.vue')
+    },
+    {
+      path: '/testPage',
+      name: 'testPage',
+      component: () => import('../views/TestPage.vue')
+    },
+    {
+      path: '/scrollTest',
+      name: 'scrollTest',
+      component: () => import('../views/ScrollTest.vue')
     }
   ]
 })
