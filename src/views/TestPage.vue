@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div>
     <h1>test add input</h1>
     <div>
@@ -22,4 +22,4 @@ export default {
     }
   }
 }
-</script>
+</script> -->
