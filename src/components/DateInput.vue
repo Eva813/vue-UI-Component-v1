@@ -1,4 +1,4 @@
-<template id="DateTimeInput">
+<!-- <template id="DateTimeInput">
   <date-picker ref="datePicker" input-class="form-control" popup-class="dropdown-menu" :type="inputType"
     :formatter="formatedDate" :range="rangeDate" v-model="dateValue" :placeholder="setPlaceholder" :lang="lang"
     :disabled="disabled" :clearable="clearable" :editable="editable" :disabled-date="disabledDate"
@@ -224,4 +224,4 @@ export default {
     this.initial();
   }
 };
-</script>
+</script> -->

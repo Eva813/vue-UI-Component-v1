@@ -8,7 +8,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 // https://codesandbox.io/s/nz89q?file=/src/components/Volume.vue
 export default {
   name: "Volume",

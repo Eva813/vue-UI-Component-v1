@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="custom-slider-container" ref="railRef">
     <div class="custom-slider-track" :style="{ width: thumbPosX + 'px' }"></div>
     <div class="custom-slider-thumb" :style="{ left: thumbPosX + 'px' }" ref="thumbRef" @mousedown="startDrag"></div>
@@ -125,4 +125,4 @@ export default {
   background-color: #2196f3;
   cursor: pointer;
 }
-</style>
+</style> -->

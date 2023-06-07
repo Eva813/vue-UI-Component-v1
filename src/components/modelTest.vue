@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="modal fade" tabindex="-1" role="dialog" :id="id" :class="{ persistent: persistent }">
     <div class="modal-dialog modal-dialog-centered" :class="size" role="document">
       <div class="modal-content">
@@ -126,4 +126,4 @@ export default {
     }
   }
 };
-</script>
+</script> -->
