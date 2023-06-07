@@ -6,6 +6,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/vue-UI-Component-v1/',
   plugins: [vue(), vueJsx()],
   resolve: {
     alias: {
@@ -24,5 +25,6 @@ export default defineConfig({
       //   rewrite: (path) => path.replace(/^\/api/, '')
       // }
     }
-  }
+  },
+  
 })
