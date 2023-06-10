@@ -30,12 +30,12 @@ const { min, max, step, minValue, maxValue } = defineProps({
 const emit = defineEmits(["update:minValue", "update:maxValue"]);
 
 // define refs for the slider element and the slider values
-const slider = ref(null);
+const slider = ref<HTMLInputElement | null>(null);
 const sliderMinValue = ref(minValue);
 const sliderMaxValue = ref(maxValue);
 
 // function to get the percentage of a value between the min and max values
-const getPercent = (value, min, max) => {
+const getPercent = (value: number, min: number, max: number) => {
   return ((value - min) / (max - min)) * 100;
 };
 
@@ -45,10 +45,10 @@ const sliderDifference = computed(() => {
 });
 
 // function to set the css variables for width, left, and right
-const setCSSProps = (width, left, right) => {
-  slider.value.style.setProperty("--width", `${width}%`);
-  slider.value.style.setProperty("--progressLeft", `${left}%`);
-  slider.value.style.setProperty("--progressRight", `${right}%`);
+const setCSSProps = (width: number, left: number, right: number) => {
+  slider.value!.style.setProperty("--width", `${width}%`);
+  slider.value!.style.setProperty("--progressLeft", `${left}%`);
+  slider.value!.style.setProperty("--progressRight", `${right}%`);
 };
 
 // watchEffect to emit the updated values, and update the css variables
@@ -68,13 +68,22 @@ watchEffect(() => {
     setCSSProps(differencePercent, leftPercent, rightPercent);
   }
 });
+
+const handleMinInputChange = (e: any) => {
+  const targetValue = parseFloat(e.target.value);
+  sliderMinValue.value = targetValue
+}
+const handleMaxInputChange = (e: any) => {
+  const targetValue = parseFloat(e.target.value);
+  sliderMaxValue.value = targetValue
+}
 </script>
 <template>
   <div ref="slider" class="custom-slider minmax">
     <input type="range" name="min" id="min" :min="min" :max="max" :value="minValue" :step="step"
-      @input="({ target }) => (sliderMinValue = parseFloat(target.value))" />
+      @input="handleMinInputChange" />
     <input type="range" name="max" id="max" :min="min" :max="max" :value="maxValue" :step="step"
-      @input="({ target }) => (sliderMaxValue = parseFloat(target.value))" />
+      @input="handleMaxInputChange" />
   </div>
   <div class="minmax-inputs">
     <input type="number" :step="step" v-model="sliderMinValue" />

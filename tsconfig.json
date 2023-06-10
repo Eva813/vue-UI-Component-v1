@@ -12,6 +12,6 @@
     }
   ],
   "compilerOptions": {
-    "checkJs": false,
+    // "checkJs": false,
   }
 }

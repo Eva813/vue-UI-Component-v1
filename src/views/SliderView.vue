@@ -5,14 +5,17 @@ import MinMaxSlider from '../components/MinMaxSlider.vue'
 import { ref, watchEffect } from 'vue'
 
 const sliderValue = ref(50);
-const slider = ref(null);
+const slider = ref<HTMLInputElement | null>(null);
 const getProgress = (value: number, min: number, max: number) => {
   return ((value - min) / (max - min)) * 100;
 };
 
 //設置 --ProgressPercent 變數寬度
 const setCSSProgress = (progress: number) => {
-  slider.value.style.setProperty("--ProgressPercent", `${progress}%`);
+  if (slider.value !== null){
+    slider.value.style.setProperty("--ProgressPercent", `${progress}%`);
+  }
+  
 };
 
 //透過 watch 即時觀察
@@ -20,8 +23,8 @@ watchEffect(() => {
   if (slider.value) {
     const progress = getProgress(
       sliderValue.value,
-      slider.value.min,
-      slider.value.max
+      parseFloat(slider.value.min),
+      parseFloat(slider.value.max)
     );
     //
     let extraWidth = (100 - progress) / 10;

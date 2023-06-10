@@ -28,16 +28,18 @@ const emit = defineEmits(["update:modelValue"]);
 
 // define refs for the slider component
 const sliderValue = ref(modelValue);
-const slider = ref(null);
+const slider = ref<HTMLInputElement | null>(null);
 
 // function to get the progress of the slider
-const getProgress = (value, min, max) => {
+const getProgress = (value: number, min: number, max: number) => {
   return ((value - min) / (max - min)) * 100;
 };
 
 // function to set the css variable for 進度條
-const setCSSProgress = (progress) => {
-  slider.value.style.setProperty("--ProgressPercent", `${progress}%`);
+const setCSSProgress = (progress: number) => {
+  if (slider.value !== null) {
+    slider.value.style.setProperty("--ProgressPercent", `${progress}%`);
+  }
 };
 
 // watchEffect to update the css variable when the slider value changes
@@ -49,8 +51,8 @@ watchEffect(() => {
     // 更新 the slider progress
     const progress = getProgress(
       sliderValue.value,
-      slider.value.min,
-      slider.value.max
+      parseFloat(slider.value.min),
+      parseFloat(slider.value.max)
     );
 
     // define extrawidth to ensure that the end of progress is always under the slider thumb.
@@ -60,16 +62,21 @@ watchEffect(() => {
     setCSSProgress(progress + extraWidth);
   }
 });
+
+const handleInputChange = (e: any)=>{
+  const targetValue = parseFloat(e.target.value);
+  sliderValue.value = targetValue
+}
 </script>
 
 <template>
   <!-- //@input="({ target }) => (sliderValue = parseFloat(target.value))" -->
   <div class="custom-slider">
     <input ref="slider" :value="sliderValue" 
-      @input="({ target }) => (sliderValue = parseFloat(target.value))"
+      @input="handleInputChange"
       type="range" :min="min" :max="max" :step="step" class="slider" />
     <input :value="sliderValue" 
-        @input="({ target }) => (sliderValue = parseFloat(target.value))"
+        @input="handleInputChange"
         :min="min" 
         :max="max"
         :step="step"  
