@@ -79,6 +79,11 @@ const router = createRouter({
       path: '/scrollTest',
       name: 'scrollTest',
       component: () => import('../views/ScrollTest.vue')
+    },
+    {
+      path: '/tooltipView',
+      name: 'tooltipView',
+      component: () => import('../views/TooltipView.vue')
     }
   ]
 })

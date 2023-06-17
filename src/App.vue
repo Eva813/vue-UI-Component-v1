@@ -21,6 +21,7 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/expansionView">ExpansionView</RouterLink>
         <RouterLink to="/formsView">formsView</RouterLink>
         <RouterLink to="/sliderView">sliderView</RouterLink>
+        <RouterLink to="/tooltipView">Tooltips</RouterLink>
         <div class="px-3">Other practice</div>
         <RouterLink to="/testPage">TEST</RouterLink>
         <RouterLink to="/scrollTest">scrollTest</RouterLink>

@@ -1,5 +1,7 @@
 # vue-UI-Component-1
-v18.15.0
+node: v18.15.0
+
+make reuseable components
 
 This template should help get you started developing with Vue 3 in Vite.
 
