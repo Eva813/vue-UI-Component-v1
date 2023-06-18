@@ -4,14 +4,13 @@ import { ref, onMounted,  computed } from 'vue';
 const isTooltipVisible = ref(false);
 
 
-  const props: {
+const props = withDefaults(defineProps<{
     text: string;
     position: string;
-  } = withDefaults(defineProps(), {
+  }>(), {
     text: '',
     position: ''
   });
-
 
 
 
