@@ -3,11 +3,11 @@ import { ref, onMounted,  computed } from 'vue';
 
 const isTooltipVisible = ref(false);
 
-export interface Props {
+export interface Tooltip {
   text: string ;
-  position: string
+  position: string;
 }
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Tooltip>(), {
   text: '',
   position: ''
 });
