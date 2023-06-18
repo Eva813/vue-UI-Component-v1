@@ -3,15 +3,14 @@ import { ref, onMounted,  computed } from 'vue';
 
 const isTooltipVisible = ref(false);
 
-export interface Tooltip {
-  text: string ;
-  position: string;
-}
-const props = withDefaults(defineProps<Tooltip>(), {
-  text: '',
-  position: ''
-});
 
+  const props: {
+    text: string;
+    position: string;
+  } = withDefaults(defineProps(), {
+    text: '',
+    position: ''
+  });
 
 
 
