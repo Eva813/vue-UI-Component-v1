@@ -5,10 +5,10 @@ const isTooltipVisible = ref(false);
 
 
 
-// export interface Props {
-//   text: string,
-//   position: string
-// }
+export interface Props {
+  text: string,
+  position: string
+}
 
 
 const props = withDefaults(defineProps(), {

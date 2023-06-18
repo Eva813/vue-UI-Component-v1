@@ -20,11 +20,11 @@ import { ref, onMounted, onBeforeUnmount } from 'vue';
       </Tooltip>
 
       <div>
-      <CustomTooltip text="tooltip Hover me" class="mt-[30px] block" position="top">
+      <CustomTooltip :text="'tooltip Hover me'" class="mt-[30px] block" :position="'top'">
         <button >hover me</button>
       </CustomTooltip> 
       </div>
-      <CustomTooltip text="tooltip Hover me" class="mt-[30px]" position="right">
+      <CustomTooltip :text="'tooltip Hover me'" class="mt-[30px]" :position="'right'">
         <button>hover me</button>
       </CustomTooltip>
   </div>
