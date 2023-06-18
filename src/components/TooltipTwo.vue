@@ -3,18 +3,18 @@ import { ref, onMounted,  computed } from 'vue';
 
 const isTooltipVisible = ref(false);
 
-
-
 export interface Props {
-  text: string,
+  text: string ;
   position: string
 }
-
-
-const props = withDefaults(defineProps(), {
+const props = withDefaults(defineProps<Props>(), {
   text: '',
   position: ''
-})
+});
+
+
+
+
 
 
 const showTooltip = () => {
@@ -44,7 +44,7 @@ const tooltipClasses = computed(() => ({
   'tooltip-text': true,
   [`tooltip-${props.position}`]: true
 }))
-console.log('type', typeof props.position)
+
 
 </script>
 <template>
