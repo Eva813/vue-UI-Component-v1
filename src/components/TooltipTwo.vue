@@ -4,14 +4,14 @@ import { ref, onMounted,  computed } from 'vue';
 const isTooltipVisible = ref(false);
 
 
-console.log('isTooltipVisible', isTooltipVisible.value)
-export interface Props {
-  text: string,
-  position: string
-}
+
+// export interface Props {
+//   text: string,
+//   position: string
+// }
 
 
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps(), {
   text: '',
   position: ''
 })
@@ -44,7 +44,7 @@ const tooltipClasses = computed(() => ({
   'tooltip-text': true,
   [`tooltip-${props.position}`]: true
 }))
-
+console.log('type', typeof props.position)
 
 </script>
 <template>
