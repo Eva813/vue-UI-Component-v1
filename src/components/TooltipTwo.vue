@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount, computed } from 'vue';
+import { ref, onMounted,  computed } from 'vue';
 
 const isTooltipVisible = ref(false);
 
@@ -49,9 +49,7 @@ const tooltipClasses = computed(() => ({
 </script>
 <template>
   <div class="tooltip-wrapper relative inline-block" ref="hoverRef">
-    <slot />
-    <!-- <div class="text relative" ref="hoverRef"> {{ text }} </div> -->
-    <!-- :class="['tooltip-text', position]" -->
+    <slot></slot>
     <div v-if="isTooltipVisible"  :class="tooltipClasses">
       {{ text }}
       <!-- <slot></slot> -->
