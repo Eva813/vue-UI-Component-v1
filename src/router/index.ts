@@ -88,7 +88,7 @@ const router = createRouter({
     {
       path: '/uploadView',
       name: 'uploadView',
-      component: () => import('../views/uploadView.vue')
+      component: () => import('../views/UploadView.vue')
     }
   ]
 })
