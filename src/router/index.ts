@@ -84,6 +84,11 @@ const router = createRouter({
       path: '/tooltipView',
       name: 'tooltipView',
       component: () => import('../views/TooltipView.vue')
+    },
+    {
+      path: '/uploadView',
+      name: 'uploadView',
+      component: () => import('../views/uploadView.vue')
     }
   ]
 })
