@@ -89,6 +89,11 @@ const router = createRouter({
       path: '/uploadView',
       name: 'uploadView',
       component: () => import('../views/UploadView.vue')
+    },
+    {
+      path: '/dynamicComponent_1',
+      name: 'dynamicComponent_1',
+      component: () => import('../views/DynamicComponent_1.vue')
     }
   ]
 })

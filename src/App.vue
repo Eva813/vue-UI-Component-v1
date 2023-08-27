@@ -26,6 +26,8 @@ import HelloWorld from './components/HelloWorld.vue'
         <div class="px-3">Other practice</div>
         <RouterLink to="/testPage">TEST</RouterLink>
         <RouterLink to="/scrollTest">scrollTest</RouterLink>
+        <RouterLink to="/dynamicComponent_1">DynamicComponent_1</RouterLink>
+        <RouterLink to="/dynamicComponent_1">DynamicComponent_1</RouterLink>
       </nav>
     </div>
   </header>
