@@ -20,7 +20,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import card from '../components/Card/Card.vue'
+import card from '../components/Card/card.vue'
 import cardTitle from '../components/Card/cardTitle.vue'
 
 </script>
