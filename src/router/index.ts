@@ -91,6 +91,11 @@ const router = createRouter({
       component: () => import('../views/UploadView.vue')
     },
     {
+      path: '/cardView',
+      name: 'cardView',
+      component: () => import('../views/CardView.vue')
+    },
+    {
       path: '/dynamicComponent_1',
       name: 'dynamicComponent_1',
       component: () => import('../views/DynamicComponent_1.vue')
